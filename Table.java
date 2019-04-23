@@ -31,7 +31,7 @@ public class Table {
         return true;
     }
 /*
-    public void populate(int josh[][], Attendee guests[][]) { //josh array shows comapny sizes, guests array has all attendees
+    public void populate(int josh[][], Attendee guests[][]) { //josh array shows comapany sizes, guests array has all attendees
         int max = 0;
         for (int i = 0; i < numCompanies; i++) {
             for (int j = 0; j < numCompanies; j++) {//finds company with max people
