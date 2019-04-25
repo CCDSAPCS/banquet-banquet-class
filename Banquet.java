@@ -24,7 +24,7 @@ public class Banquet {
 
     public void register() {
         // if the number of attendees made is under 100, take input. otherwise quit
-        if (aIDcounter < 99) {
+        if (aIDcounter < 100) {
             Scanner scan = new Scanner(System.in);
             System.out.println("give company ID");
             int companyID = scan.nextInt();
@@ -43,9 +43,9 @@ public class Banquet {
             } else System.out.println("Each Company can only submit 10 attendees");
         } else System.out.println("REGISTRATION CLOSED");
     }
-//Allows a given company to submit multiple attendees at once, sort of
+    //Allows a given company to submit multiple attendees at once, sort of
     public void register(int company) {
-        if (aIDcounter<99) {
+        if (aIDcounter<100) {
             Scanner scan = new Scanner(System.in);
             System.out.println("give number of applicants");
             int counter = scan.nextInt();
@@ -66,10 +66,56 @@ public class Banquet {
             }else System.out.println("Maximum number of attendees per company is 10");
         }else System.out.println("REGISTRATION CLOSED");
     }
+    public void seating() {
+        if (attendees.size()<100) {
+            System.out.println("REGISTRATION INCOMPLETE. NO SEATING ARRANGEMENT AVAILABLE");
+        }
+        else {
+            Table table = new Table(10,10,companies.size());
+            table.populate(companiescounter,attendees);
+            System.out.println(Arrays.toString(table.returnTables()));
+
+        }
+
+
+    }
+
+
 
 
     public static void main(String[] args) {
+
         Banquet b1 = new Banquet();
-        b1.register();
+        Scanner scan = new Scanner(System.in);
+        boolean done = false;
+        int input;
+        int company;
+        while (!done) {
+            System.out.println("CHOOSE A FUNCTION");
+            System.out.println("    1)Register a single attendee");
+            System.out.println("    2)Register multiple attendees from one company");
+            System.out.println("    3)Print seating arrangement");
+            System.out.println("    4)Quit Program");
+            input = scan.nextInt();
+
+            if(input==1) {
+                b1.register();
+            }
+            else if(input==2){
+                System.out.println("INPUT COMPANY ID 0-15");
+                company = scan.nextInt();
+                b1.register(company);
+            }
+            else if(input==3) {
+                System.out.println("PRINTING SEATING");
+                b1.seating();
+
+            }
+            else if(input==4){
+                System.out.println("TERMINATING PROGRAM");
+                done = true;
+            }
+            else System.out.println("INVALID INPUT, TRY AGAIN");
+        }
     }
 }
