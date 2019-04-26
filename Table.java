@@ -49,6 +49,7 @@ public class Table {
                         int counter=0;
                         if(person.returnCompany() == i){
                             tables[i][counter]=person;
+                            person.setTable(i);
                             counter++;
                         }
                     }
@@ -60,6 +61,7 @@ public class Table {
                                 for(int z=0;z<tablePeople;z++){
                                     if(tables[j][z]==null){
                                         tables[j][z]=person;
+                                        person.setTable(j);
                                     }
                                 }
                             }

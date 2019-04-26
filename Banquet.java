@@ -16,6 +16,14 @@ public class Banquet {
 
     //attendeeID 0-99 incremented by the register method. allows attendees to be found within the 100 attendee arraylist
     int aIDcounter = 0;
+    //number of tables available
+    int numtables = 10;
+    //number of seats at each table
+    int numseats = 10;
+    // the total capacity of the banquet
+    int maxattendees = numtables * numseats;
+
+
 
     /*overloaded method that with no parameters that allows an individual to submit him or herself.
      * With the parameter of company, a company can submit multiple attendees at once.
@@ -24,7 +32,7 @@ public class Banquet {
 
     public void register() {
         // if the number of attendees made is under 100, take input. otherwise quit
-        if (aIDcounter < 100) {
+        if (aIDcounter < maxattendees) {
             Scanner scan = new Scanner(System.in);
             System.out.println("give company ID");
             int companyID = scan.nextInt();
@@ -43,15 +51,16 @@ public class Banquet {
             } else System.out.println("Each Company can only submit 10 attendees");
         } else System.out.println("REGISTRATION CLOSED");
     }
+
     //Allows a given company to submit multiple attendees at once, sort of
     public void register(int company) {
-        if (aIDcounter<100) {
+        if (aIDcounter < maxattendees) {
             Scanner scan = new Scanner(System.in);
             System.out.println("give number of applicants");
             int counter = scan.nextInt();
-            if (counter + companiescounter[company] <=10) {
-                for(int i=0;i<counter;i++) {
-                    System.out.println("Enter info for attendee#"+(i+1));
+            if (counter + companiescounter[company] <= 10) {
+                for (int i = 0; i < counter; i++) {
+                    System.out.println("Enter info for attendee#" + (i + 1));
                     System.out.println("Give first name");
                     String first = scan.next();
                     System.out.println("Give last name");
@@ -63,22 +72,29 @@ public class Banquet {
                     companiescounter[company]++;
                     aIDcounter++;
                 }
-            }else System.out.println("Maximum number of attendees per company is 10");
-        }else System.out.println("REGISTRATION CLOSED");
+            } else System.out.println("Maximum number of attendees per company is 10");
+        } else System.out.println("REGISTRATION CLOSED");
     }
+
+    public ArrayList<Attendee> returnAttendees() {
+
+        return attendees;
+    }
+
     public void seating() {
-        if (attendees.size()<100) {
+        if (attendees.size() < 100) {
             System.out.println("REGISTRATION INCOMPLETE. NO SEATING ARRANGEMENT AVAILABLE");
-        }
-        else {
-            Table table = new Table(10,10,companies.size());
-            table.populate(companiescounter,attendees);
+        } else {
+            Table table = new Table(numtables, numseats, companies.size());
+            table.populate(companiescounter, attendees);
             System.out.println(Arrays.toString(table.returnTables()));
 
         }
 
 
     }
+
+
 
 
 
@@ -95,7 +111,9 @@ public class Banquet {
             System.out.println("    1)Register a single attendee");
             System.out.println("    2)Register multiple attendees from one company");
             System.out.println("    3)Print seating arrangement");
-            System.out.println("    4)Quit Program");
+            System.out.println("    4)Print Attendee list");
+            System.out.println("    5)Print Detailed Attendee list");
+            System.out.println("    6)Quit Program");
             input = scan.nextInt();
 
             if(input==1) {
@@ -111,7 +129,20 @@ public class Banquet {
                 b1.seating();
 
             }
-            else if(input==4){
+            else if(input==4) {
+                System.out.println("ATTENDEE LIST");
+                for(Attendee dude: b1.returnAttendees() ) {
+                    System.out.println(dude.returnName());
+                }
+
+            }
+            else if (input==5){
+                System.out.println("DETAILED ATTENDEE LIST");
+                for(Attendee dude: b1.returnAttendees() ) {
+                    dude.print();
+                }
+            }
+            else if(input==6){
                 System.out.println("TERMINATING PROGRAM");
                 done = true;
             }

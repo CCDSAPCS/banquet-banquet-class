@@ -3,9 +3,10 @@ public class Attendee {
 
     String aFirst;
     String aLast;
-    int aCompany = 0;
+    int aCompany;
     String aAllergies;
-    int aID = 0;
+    int aID;
+    int aTable;
 
     public Attendee(String firstName, String lastName, int company, String allergies, int aID) { //The banquet class passes in these variables for each "attendee"
         aFirst = firstName;
@@ -46,6 +47,10 @@ public class Attendee {
         public void print() {
             System.out.println("name: " + returnName());
             System.out.println("allergies: " + aAllergies);
+        }
+
+        public void setTable(int table) {
+        aTable = table;
         }
 
     }
