@@ -1,8 +1,4 @@
 **
-Just a reminder - github is a little different
-
-Folder structures are not as fluid - to read, think, and ask before creating new stuff
-
-CCDSAPCS/banquet-banquet-class will be our default Repo going forward.
-
-USE the create buttons to add elements, paying careful attention
+This is my supercalifragilisticespialodocious version of banquet class.
+It is fully abstracted. just run Banquet.java and input the requested values.
+I've made changes here and there on every class just for easier functionality

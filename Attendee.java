@@ -39,6 +39,9 @@ public class Attendee {
             return (aFirst + " " + aLast);
 
         }
+        public int returnTable() {
+        return aTable;
+        }
 
         public int returnAID() {
             return aID;

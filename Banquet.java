@@ -4,10 +4,17 @@ import java.util.Scanner;
 
 public class Banquet {
 
-    // companies is an arraylist of every company in attendance. their comanyID is their index in the arrayList
-    ArrayList<String> companies = new ArrayList<>(Arrays.asList("WalMart", "Kroger", "Amazon", "Lowes", "BestWestern", "KMart", "Fusian", "Heinz",
-            "Gucci", "Prada", "Nike", "Dodge", "Maserati", "Razor", "AMD", "Razer"));
+    //initialization parameters for banquet class.
+    public Banquet(int tablecount,int tableseats,ArrayList<String> groups){
+        numtables=tablecount;
+        numseats=tableseats;
+        companies=groups;
+    }
 
+    //Initialize the scanner that will be used throughout this shizzle.
+    Scanner scan = new Scanner(System.in);
+    // companies is an arraylist of every company in attendance. their comanyID is their index in the arrayList
+    ArrayList<String> companies;
     //an arraylistof 100 attendees
     ArrayList<Attendee> attendees = new ArrayList<>();
 
@@ -15,11 +22,11 @@ public class Banquet {
     int[] companiescounter = new int[companies.size()];
 
     //attendeeID 0-99 incremented by the register method. allows attendees to be found within the 100 attendee arraylist
-    int aIDcounter = 0;
+    int aIDcounter;
     //number of tables available
-    int numtables = 10;
+    int numtables;
     //number of seats at each table
-    int numseats = 10;
+    int numseats;
     // the total capacity of the banquet
     int maxattendees = numtables * numseats;
 
@@ -33,7 +40,6 @@ public class Banquet {
     public void register() {
         // if the number of attendees made is under 100, take input. otherwise quit
         if (aIDcounter < maxattendees) {
-            Scanner scan = new Scanner(System.in);
             System.out.println("give company ID");
             int companyID = scan.nextInt();
             int counter = companiescounter[companyID];
@@ -80,9 +86,16 @@ public class Banquet {
 
         return attendees;
     }
+    public int returnAttendeeSize(){
+        return attendees.size();
+    }
+
+    public int returnMax() {
+        return maxattendees;
+    }
 
     public void seating() {
-        if (attendees.size() < 100) {
+        if (attendees.size() < maxattendees) {
             System.out.println("REGISTRATION INCOMPLETE. NO SEATING ARRANGEMENT AVAILABLE");
         } else {
             Table table = new Table(numtables, numseats, companies.size());
@@ -94,59 +107,4 @@ public class Banquet {
 
     }
 
-
-
-
-
-
-    public static void main(String[] args) {
-
-        Banquet b1 = new Banquet();
-        Scanner scan = new Scanner(System.in);
-        boolean done = false;
-        int input;
-        int company;
-        while (!done) {
-            System.out.println("CHOOSE A FUNCTION");
-            System.out.println("    1)Register a single attendee");
-            System.out.println("    2)Register multiple attendees from one company");
-            System.out.println("    3)Print seating arrangement");
-            System.out.println("    4)Print Attendee list");
-            System.out.println("    5)Print Detailed Attendee list");
-            System.out.println("    6)Quit Program");
-            input = scan.nextInt();
-
-            if(input==1) {
-                b1.register();
-            }
-            else if(input==2){
-                System.out.println("INPUT COMPANY ID 0-15");
-                company = scan.nextInt();
-                b1.register(company);
-            }
-            else if(input==3) {
-                System.out.println("PRINTING SEATING");
-                b1.seating();
-
-            }
-            else if(input==4) {
-                System.out.println("ATTENDEE LIST");
-                for(Attendee dude: b1.returnAttendees() ) {
-                    System.out.println(dude.returnName());
-                }
-
-            }
-            else if (input==5){
-                System.out.println("DETAILED ATTENDEE LIST");
-                for(Attendee dude: b1.returnAttendees() ) {
-                    dude.print();
-                }
-            }
-            else if(input==6){
-                System.out.println("TERMINATING PROGRAM");
-                done = true;
-            }
-            else System.out.println("INVALID INPUT, TRY AGAIN");
-        }
-    }
 }
