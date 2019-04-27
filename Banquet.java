@@ -107,10 +107,11 @@ public class Banquet {
     public void seating() {
         if (attendees.size() < maxattendees) {
             System.out.println("REGISTRATION INCOMPLETE. NO SEATING ARRANGEMENT AVAILABLE");
-        } else {
+        }
+        else {
             Table table = new Table(numTables, numSeats, Companies.size());
             table.populate(CompaniesCounter, attendees);
-            System.out.println(Arrays.toString(table.returnTables()));
+            table.printTables();
 
         }
 
