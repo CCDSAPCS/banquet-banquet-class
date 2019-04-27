@@ -1,14 +1,30 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BanquetRun {
 
     public static void main(String[] args) {
-
-        Banquet b1 = new Banquet();
-        Scanner scan = new Scanner(System.in);
+        int numTables;
+        int numSeats;
         boolean done = false;
         int input;
         int company;
+        ArrayList<String> Companies = new ArrayList<>(Arrays.asList("WalMart", "Kroger", "Amazon", "Lowes", "BestWestern", "KMart", "Fusian", "Heinz",
+                "Gucci", "Prada", "Nike", "Dodge", "Maserati", "Razor", "AMD", "Razer"));
+        Scanner scan = new Scanner(System.in);
+        System.out.println("WELCOME TO BANQUET");
+
+        System.out.println("How many Tables do you have?");
+        input = scan.nextInt();
+        numTables = input;
+
+        System.out.println("How many Seats at each Table?");
+        input = scan.nextInt();
+        numSeats = input;
+
+        Banquet b1 = new Banquet(numTables,numSeats,Companies);
+
         while (!done) {
             System.out.println("CHOOSE A FUNCTION");
             System.out.println("    1)Register a single attendee");

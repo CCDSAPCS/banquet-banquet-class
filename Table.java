@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Table {
 
     int numTable;
@@ -43,7 +44,7 @@ public class Table {
 
         public void populate(int josh[], ArrayList<Attendee>attendees) { //josh array shows comapny sizes, guests array has all attendees
 
-            for(int i=0;i<josh.length;i++){
+            for(int i=0;i<numCompanies;i++){
                 if(josh[i]==numTable){
                     for(Attendee person:attendees){
                         int counter=0;
@@ -54,7 +55,7 @@ public class Table {
                         }
                     }
                 }
-                if(josh[i]<numTable){
+                else {
                     for(Attendee person:attendees){
                         if(person.returnCompany() == i ){
                             for(int j=0;j<numTable;j++){
