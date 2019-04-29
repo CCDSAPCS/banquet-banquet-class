@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
 
 public class BanquetRun {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException{
         int numTables;
         int numSeats;
         boolean done = false;
         int input;
         int company;
+        String file;
         ArrayList<String> Companies = new ArrayList<>(Arrays.asList("WalMart", "Kroger", "Amazon", "Lowes", "BestWestern", "KMart", "Fusian", "Heinz",
                 "Gucci", "Prada", "Nike", "Dodge", "Maserati", "Razor", "AMD", "Razer"));
         Scanner scan = new Scanner(System.in);
@@ -29,10 +31,11 @@ public class BanquetRun {
             System.out.println("CHOOSE A FUNCTION");
             System.out.println("    1)Register a single attendee");
             System.out.println("    2)Register multiple attendees from one company");
-            System.out.println("    3)Print seating arrangement");
-            System.out.println("    4)Print Attendee list");
-            System.out.println("    5)Print Detailed Attendee list");
-            System.out.println("    6)Quit Program");
+            System.out.println("    3)Register attendees through a file");
+            System.out.println("    4)Print seating arrangement");
+            System.out.println("    5)Print Attendee list");
+            System.out.println("    6)Print Detailed Attendee list");
+            System.out.println("    7)Quit Program");
             input = scan.nextInt();
 
             if(input==1) {
@@ -44,11 +47,23 @@ public class BanquetRun {
                 b1.register(company);
             }
             else if(input==3) {
+                System.out.println("Enter file name e x a c t l y");
+                file=scan.next();
+                try {
+                    b1.register(file);
+                }
+                catch (FileNotFoundException ex) {
+                    System.out.println("I SAID EXACTLY DUNCECAP. TRY AGAIN!");
+                    file=scan.next();
+                    b1.register(file);
+                }
+            }
+            else if(input==4) {
                 System.out.println("PRINTING SEATING");
                 b1.seating();
 
             }
-            else if(input==4) {
+            else if(input==5) {
                 System.out.println("ATTENDEE LIST");
                 System.out.println("Total attendees: "+b1.returnAttendeeSize());
                 for(Attendee dude: b1.returnAttendees() ) {
@@ -56,7 +71,7 @@ public class BanquetRun {
                 }
 
             }
-            else if (input==5){
+            else if (input==6){
                 System.out.println("DETAILED ATTENDEE LIST");
                 System.out.println("Total attendees: "+b1.returnAttendeeSize());
                 if(b1.returnAttendeeSize()<b1.returnMax()) {
@@ -71,7 +86,7 @@ public class BanquetRun {
                     }
                 }
             }
-            else if(input==6){
+            else if(input==7){
                 System.out.println("TERMINATING PROGRAM");
                 done = true;
             }

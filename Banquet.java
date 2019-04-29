@@ -1,6 +1,7 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
+import java.io.File;
 
 public class Banquet {
 
@@ -32,13 +33,21 @@ public class Banquet {
     // the total capacity of the banquet
     int maxattendees;
 
+    int companyID;
+
+    String tempCompID;
+
     String first;
 
     String last;
 
     String allergies;
 
+    int loopcount;
 
+    String[] variables;
+
+    String line;
 
     /*overloaded method that with no parameters that allows an individual to submit him or herself.
      * With the parameter of company, a company can submit multiple attendees at once.
@@ -49,7 +58,7 @@ public class Banquet {
         // if the number of attendees made is under 100, take input. otherwise quit
         if (aIDcounter < maxattendees) {
             System.out.println("give company ID");
-            int companyID = scan.nextInt();
+            companyID = scan.nextInt();
             int counter = CompaniesCounter[companyID];
             if (counter < 10) {
                 System.out.println("Give first name");
@@ -90,6 +99,41 @@ public class Banquet {
             else System.out.println("Maximum number of attendees per company is 10");
         }
         else System.out.println("REGISTRATION CLOSED");
+    }
+
+    public void register(String filename) throws FileNotFoundException {
+        try {
+        Scanner scanner=new Scanner(new File(filename));
+        scanner.useDelimiter(",");
+        loopcount=0;
+            while (scanner.hasNext()) {
+                line=scanner.nextLine();
+                variables = line.split(",");
+                last = variables[0];
+                first = variables[1];
+                tempCompID = variables[2];
+                companyID = Integer.parseInt(tempCompID);
+                allergies = randomallergy();
+                attendees.add(new Attendee(first, last, companyID, allergies, aIDcounter));
+                aIDcounter++;
+                loopcount++;
+            }
+            scanner.close();
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println("File not found");
+        }
+        System.out.println("Attendees generated: "+loopcount);
+
+    }
+
+    public String randomallergy() {
+        int randy = (int)(Math.random()*4);
+        if(randy == 4) return "nuts";
+        else if (randy == 3) return "seafood";
+        else if (randy == 2) return "lobster";
+        else if (randy == 1) return "gluten";
+        else return "none";
     }
 
     public ArrayList<Attendee> returnAttendees() {

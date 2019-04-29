@@ -1,91 +1,90 @@
-ATTID,LAST,FIRST,COMPID
-1, Ramirez,Ebony,1
-2, Boyd,Antonia,1
-3, Jimenez,Morris,2
-4, Dixon,Russell,2
-5, Wood,Neil,2
-6, Sims,Sylvester,2
-7, Marshall,Julio,3
-8, Reynolds,Peggy,3
-9, Salazar,Bonnie,3
-10, Montgomery,Nathaniel,3
-11, Moore,Roderick,3
-12, Wise,Martin,4
-13, Brewer,Cecelia,4
-14, Thomas,Earl,4
-15, Hawkins,Shari,4
-16, Jordan,Daryl,4
-17, Ramos,Sally,5
-18, Floyd,Woodrow,5
-19, Blair,Stephen,5
-20, Norman,Emmett,5
-21, Osborne,Roman,5
-22, Lawson,Jaime,5
-23, Craig,Guillermo,5
-24, Strickland,Stacy,6
-25, Goodwin,Tommy,6
-26, Hopkins,Dominick,6
-27, Mack,Rose,6
-28, Gray,Ryan,6
-29, Mullins,Geneva,6
-30, Mann,Katie,6
-31, Harris,Louis,7
-32, Spencer,Iris,7
-33, Simpson,Nellie,8
-34, Mason,Brandon,9
-35, Anderson,Angie,9
-36, Daniels,Megan,9
-37, Elliott,Connie,9
-38, Garza,Erma,9
-39, Carson,Sharon,9
-40, Kelley,Robin,9
-41, Garner,Bertha,9
-42, Townsend,Mindy,9
-43, Aguilar,Steven,10
-44, Gardner,Leonard,10
-45, Wolfe,Jessie,10
-46, Lewis,Marty,10
-47, Wong,Tony,10
-48, Mccormick,Ellen,10
-49, Rios,Tasha,10
-50, Gregory,Vincent,11
-51, Moss,Antonio,11
-52, Houston,Howard,11
-53, Duncan,Mandy,11
-54, Barker,Natasha,11
-55, Collins,Rolando,11
-56, Estrada,Amelia,11
-57, Davidson,Nicolas,11
-58, Freeman,Courtney,11
-59, Romero,Lauren,11
-60, Paul,Armando,11
-61, Ball,Violet,12
-62, Munoz,Terence,12
-63, Ellis,Wayne,12
-64, Allen,Lela,12
-65, French,Brian,12
-66, Barnes,Glenn,13
-67, Harvey,Lyle,13
-68, Cross,Marvin,13
-69, Phelps,Jared,13
-70, Ferguson,Jamie,13
-71, Mitchell,Frank,13
-72, Holloway,Vanessa,14
-73, Mcgee,Lana,14
-74, Gomez,Caroline,14
-75, Rose,Tracey,14
-76, Baker,Phyllis,14
-77, Huff,Andy,15
-78, Dawson,Monique,15
-79, Reyes,Johnny,15
-80, Saunders,Cody,15
-81, Hines,Kent,15
-82, Simmons,Sheldon,15
-83, Rice,Genevieve,16
-84, Adkins,Oliver,16
-85, Gutierrez,Billy,16
-86, Austin,Patricia,16
-87, Gilbert,Angel,16
-88, Tate,Allan,16
-89, Foster,Carla,16
-90, Bowen,Freddie,16
+Ramirez,Ebony,1
+Boyd,Antonia,1
+Payne,Joshua,1
+Jimenez,Morris,2
+Dixon,Russell,2
+Wood,Neil,2
+Sims,Sylvester,2
+Marshall,Julio,3
+Reynolds,Peggy,3
+Salazar,Bonnie,3
+Montgomery,Nathaniel,3
+Moore,Roderick,3
+Wise,Martin,4
+Brewer,Cecelia,4
+Thomas,Earl,4
+Hawkins,Shari,4
+Jordan,Daryl,4
+Ramos,Sally,5
+Floyd,Woodrow,5
+Blair,Stephen,5
+Norman,Emmett,5
+Osborne,Roman,5
+Lawson,Jaime,5
+Craig,Guillermo,5
+Strickland,Stacy,6
+Goodwin,Tommy,6
+Hopkins,Dominick,6
+Mack,Rose,6
+Gray,Ryan,6
+Mullins,Geneva,6
+Mann,Katie,6
+Harris,Louis,7
+Spencer,Iris,7
+Simpson,Nellie,8
+Mason,Brandon,9
+Anderson,Angie,9
+Daniels,Megan,9
+Elliott,Connie,9
+Garza,Erma,9
+Carson,Sharon,9
+Kelley,Robin,9
+Garner,Bertha,9
+Townsend,Mindy,9
+Aguilar,Steven,10
+Gardner,Leonard,10
+Wolfe,Jessie,10
+Lewis,Marty,10
+Wong,Tony,10
+Mccormick,Ellen,10
+Rios,Tasha,10
+Gregory,Vincent,11
+Moss,Antonio,11
+Houston,Howard,11
+Duncan,Mandy,11
+Barker,Natasha,11
+Collins,Rolando,11
+Estrada,Amelia,11
+Davidson,Nicolas,11
+Freeman,Courtney,11
+Romero,Lauren,11
+Ball,Violet,12
+Munoz,Terence,12
+Ellis,Wayne,12
+Allen,Lela,12
+French,Brian,12
+Barnes,Glenn,13
+Harvey,Lyle,13
+Cross,Marvin,13
+Phelps,Jared,13
+Ferguson,Jamie,13
+Mitchell,Frank,13
+Holloway,Vanessa,14
+Mcgee,Lana,14
+Gomez,Caroline,14
+Rose,Tracey,14
+Baker,Phyllis,14
+Huff,Andy,15
+Dawson,Monique,15
+Reyes,Johnny,15
+Saunders,Cody,15
+Hines,Kent,15
+Simmons,Sheldon,15
+Rice,Genevieve,16
+Adkins,Oliver,16
+Gutierrez,Billy,16
+Austin,Patricia,16
+Gilbert,Angel,16
+Tate,Allan,16
+Foster,Carla,16
+Bowen,Freddie,16
