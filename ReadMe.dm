@@ -1,7 +1,8 @@
-**
-This is my supercalifragilisticespialodocious version of banquet class.
-It is fully abstracted. just run Banquet.java and input the requested values.
-I've made changes here and there on every class for readability.
--Had to fix the table class for it to work, syntax errors and incorrect variable names. 
--Added a bunch of one line methods to return values and print stuff. 
-I Quit
+Invested way too much into this. 
+It reads csv files now, pretty lit.
+for some ungodly reason, i can only seat and print the seating of 92 attendees before it crashes due to nullpointer exception
+I'm not fixing it Jeremy can do that one.
+Table class had the right idea just used a lot of incorrect variable names/incorrect syntax.
+Before the fix it would just duplicate the same attendee into every table/seat.
+Mine doesn't do that. 
+I didn't comment half the stuff i was doing but deal with it, you got free labor.
