@@ -8,14 +8,14 @@ public class Attendee {
     int aID;
     int aTable;
 
-    public Attendee(String firstName, String lastName, int company, String allergies, int aID) { //The banquet class passes in these variables for each "attendee"
+    public Attendee(String firstName, String lastName, int company, String allergies, int ayID) { //The banquet class passes in these variables for each "attendee"
         aFirst = firstName;
         aLast = lastName;
         aCompany = company;
         if (!allergies.equals(null)) { //If the person doesn't answer for allergies, no allergy variable is set
             aAllergies = allergies;
         }
-        aID = aID;
+        aID = ayID;
     }
 //Each of the following methods returns the variable for each separate attendee
 
